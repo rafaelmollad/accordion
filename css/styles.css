@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Titillium Web", sans-serif;
+  font-size: 1.6rem;
+  background: #0069d9;
+}
+
+.container {
+  width: 90%;
+  max-width: 96rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 1rem;
+  background: #fff;
+}
+
+.title {
+  font-size: 4rem;
+  color: #f1c40f;
+}
+
+.accordion__tab {
+  cursor: pointer;
+}
+
+.accordion__title {
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+}
+
+.accordion__content {
+  max-height: 0;
+  overflow: hidden;
+}
+
+.accordion__content--open {
+  max-height: 90rem;
+}
