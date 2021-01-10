@@ -22,9 +22,7 @@ const getPreviousAccordionContentEl = (currentAccordionContentEl) => {
 
 // Close Accordion
 const closeAccordionContentEl = (accordionContentEl) => {
-  // Close previous accordionContentEl
-  if (accordionContentEl)
-    accordionContentEl.classList.remove("accordion__content--open");
+  accordionContentEl.classList.remove("accordion__content--open");
 };
 
 // Handles the opening and closing of accordions
@@ -40,10 +38,21 @@ const handleAccordions = () => {
       );
 
       // Close the previous accordion content element (if any)
-      closeAccordionContentEl(previousAccordionContentEl);
+      // Change accordion icon from + to - for the previous accordion
+      if (previousAccordionContentEl) {
+        closeAccordionContentEl(previousAccordionContentEl);
+        previousAccordionContentEl.previousElementSibling.children[1].children[1].classList.toggle(
+          "icon-line--active"
+        );
+      }
 
       // Open/close current accordionContentEl
       currentAccordionContentEl.classList.toggle("accordion__content--open");
+
+      // Change accordion icon from + to - for the current accordion
+      this.children[0].nextElementSibling.children[1].classList.toggle(
+        "icon-line--active"
+      );
     });
   });
 };

@@ -1,48 +1,102 @@
+/***************
+ * BASE STYLES * 
+ ***************/
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+:root {
+  --white: #fff;
+  --imperial-primer: #222f3e;
+  --casandora-yellow: #feca57;
+}
+
 html {
   font-size: 62.5%;
+  height: 100%;
 }
 
 body {
+  min-height: 100%;
   font-family: "Titillium Web", sans-serif;
   font-size: 1.6rem;
-  background: #0069d9;
+  background: var(--imperial-primer);
 }
 
 .container {
-  width: 90%;
+  width: 100%;
   max-width: 96rem;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 1rem;
-  background: #fff;
+  background: var(--imperial-primer);
 }
 
-.title {
-  font-size: 4rem;
-  color: #f1c40f;
-}
+/*************
+ * ACCORDION * 
+ *************/
 
 .accordion__tab {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh / 5);
+  padding: 2rem;
   cursor: pointer;
+  background: #feca57;
+  border-bottom: 2px solid var(--imperial-primer);
 }
 
 .accordion__title {
-  font-size: 2.5rem;
+  font-size: 2.3rem;
   letter-spacing: 1px;
+  color: var(--white);
+  text-align: center;
+}
+
+.accordion__icon {
+  display: none;
+}
+
+.icon-line--horizontal,
+.icon-line--vertical {
+  display: block;
+  position: absolute;
+  background: var(--white);
+}
+
+.icon-line--horizontal {
+  width: 2.5rem;
+  height: 0.4rem;
+}
+
+.icon-line--vertical {
+  width: 0.4rem;
+  height: 2.5rem;
+  opacity: 1;
+  transition: all 100ms ease;
+}
+
+/* We'll toggle this class to turn the + into - and viceversa */
+.icon-line--active {
+  transform: rotate(90deg);
+  opacity: 0;
 }
 
 .accordion__content {
   max-height: 0;
   overflow: hidden;
+  background: var(--white);
+  transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
 }
 
+.content__paragraph {
+  color: var(--imperial-primer);
+  padding: 1rem 2rem;
+}
+
+/* We'll toggle this class to open and close the accordion content */
 .accordion__content--open {
   max-height: 90rem;
+  transition: max-height 1s ease-in-out;
 }

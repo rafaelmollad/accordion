@@ -1,0 +1,28 @@
+/* These styles will be applied on devices that have a width of at least 768px */
+@media screen and (min-width: 768px) {
+  .container {
+    width: 90%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 2rem 0;
+  }
+
+  .accordion__tab {
+    justify-content: space-between;
+    height: auto;
+  }
+
+  .accordion__title {
+    font-size: 2.5rem;
+  }
+
+  .accordion__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 3rem;
+    height: 3rem;
+  }
+}
